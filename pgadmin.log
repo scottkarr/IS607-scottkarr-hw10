@@ -1,0 +1,185 @@
+2016-02-13 17:39:12 ERROR  : ERROR:  syntax error at or near "'/Users/Public/tb.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '/Users/Pu...
+                                                              ^
+2016-02-13 17:40:15 ERROR  : ERROR:  syntax error at or near "'/Users/scottkarr/tb.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '/Users/sc...
+                                                              ^
+2016-02-13 17:40:54 ERROR  : ERROR:  syntax error at or near "'/Users/scottkarr/tb.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '/Users/sc...
+                                                              ^
+2016-02-13 17:41:35 ERROR  : ERROR:  syntax error at or near "'Users/scottkarr/tb.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE 'Users/sco...
+                                                              ^
+2016-02-13 17:41:48 ERROR  : ERROR:  syntax error at or near "'//Users/scottkarr/tb.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '//Users/s...
+                                                              ^
+2016-02-13 20:50:10 ERROR  : ERROR:  column "tb_cases.cases" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: HAVING cases IS NOT NULL
+               ^
+2016-02-13 20:50:57 ERROR  : ERROR:  column "tb_cases.cases" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: HAVING cases IS NOT NULL
+               ^
+2016-02-13 20:51:14 ERROR  : ERROR:  column "tb_cases.cases" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: HAVING cases IS NOT NULL
+               ^
+2016-02-13 20:51:38 ERROR  : ERROR:  column "tb_cases.cases" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: HAVING tb_cases.cases IS NOT NULL
+               ^
+2016-02-13 20:52:37 ERROR  : ERROR:  column "tb_cases.cases" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: HAVING cases IS NOT NULL
+               ^
+2016-02-13 20:57:38 ERROR  : ERROR:  syntax error at or near "'/usr/local/tb_cases.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '/usr/loca...
+                                                              ^
+2016-02-13 21:00:40 ERROR  : ERROR:  syntax error at or near "'/tmp/tb_cases.csv'"
+LINE 37: ...T country, year, SUM(cases) AS cases INTO OUTFILE '/tmp/tb_c...
+                                                              ^
+2016-02-13 21:16:57 ERROR  : ERROR:  syntax error at or near "COPY"
+LINE 5: COPY (
+        ^
+2016-02-13 21:17:19 ERROR  : ERROR:  syntax error at or near "ELECT"
+LINE 1: ELECT country, year, sex, child+adult+elderly AS cases FROM ...
+        ^
+2016-02-13 21:19:09 ERROR  : ERROR:  syntax error at or near "NOT"
+LINE 4: HAVING cases NOT NULL
+                     ^
+2016-02-13 21:33:44 ERROR  : ERROR:  could not open file "/Users/scottkarr/population.csv" for reading: No such file or directory
+2016-02-13 21:34:47 ERROR  : ERROR:  could not open file "//Users/scottkarr/Downloads/population.csv" for reading: Permission denied
+2016-02-13 21:38:07 ERROR  : ERROR:  invalid input syntax for integer: "country"
+CONTEXT:  COPY population, line 1, column year: "country"
+2016-02-13 21:38:38 ERROR  : ERROR:  invalid input syntax for integer: "year"
+CONTEXT:  COPY population, line 1, column year: "year"
+2016-02-13 21:46:20 ERROR  : ERROR:  schema "tb" does not exist
+LINE 1: CREATE TABLE tb.population
+                     ^
+2016-02-13 21:52:13 ERROR  : ERROR:  relation "tb_rates" does not exist
+LINE 1: select * from tb_rates
+                      ^
+2016-02-13 21:56:24 ERROR  : ERROR:  function isnull(character varying) does not exist
+LINE 1: SELECT isnull(country) FROM tb 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 21:56:31 ERROR  : ERROR:  syntax error at or near "("
+LINE 1: SELECT null(country) FROM tb 
+                   ^
+2016-02-13 21:57:59 ERROR  : ERROR:  column "country" does not exist
+LINE 1: SELECT coalesce(country, 'Empty') AS field_alias
+                        ^
+2016-02-13 22:03:23 ERROR  : ERROR:  operator does not exist: character varying = integer
+LINE 1: SELECT nullif(country,1) from tb AS field_alias
+               ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2016-02-13 22:03:50 ERROR  : ERROR:  COALESCE types character varying and integer cannot be matched
+LINE 1: SELECT coalesce(country, null,1,0) from tb AS field_alias
+                                      ^
+2016-02-13 22:13:07 ERROR  : ERROR:  for SELECT DISTINCT, ORDER BY expressions must appear in select list
+LINE 4: order by year desc
+                 ^
+2016-02-13 22:21:50 ERROR  : ERROR:  column "population" does not exist
+LINE 3: WHERE population is null
+              ^
+2016-02-13 22:22:47 ERROR  : ERROR:  column "tb_cases.country" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: ORDER BY country, year
+                 ^
+2016-02-13 22:33:20 ERROR  : ERROR:  column "country" does not exist
+LINE 1: SELECT country, year, coalesce(child+adult+elderly,null,0)
+               ^
+2016-02-13 22:40:40 ERROR  : ERROR:  column reference "country" is ambiguous
+LINE 1:  SELECT  country, year, coalesce(child+adult+elderly,null,0)...
+                 ^
+2016-02-13 22:44:07 ERROR  : ERROR:  syntax error at or near "rate"
+LINE 5: ....child+tb.adult+tb.elderly,null,0)/pop.population rate, deci...
+                                                             ^
+2016-02-13 22:44:51 ERROR  : ERROR:  syntax error at or near ","
+LINE 5:   coalesce(cast(tb.child+tb.adult+tb.elderly,null,0)/pop.pop...
+                                                    ^
+2016-02-13 22:45:40 ERROR  : ERROR:  syntax error at or near "FROM"
+LINE 6:  FROM  tb, population pop
+         ^
+2016-02-13 22:45:45 ERROR  : ERROR:  syntax error at or near "FROM"
+LINE 6:  FROM  tb, population pop
+         ^
+2016-02-13 22:46:50 ERROR  : ERROR:  syntax error at or near ","
+LINE 5: ...b.child+tb.adult+tb.elderly,null,0)/pop.population, decimal)
+                                                             ^
+2016-02-13 22:47:38 ERROR  : ERROR:  syntax error at or near ","
+LINE 5: ...cast(coalesce(tb.child+tb.adult+tb.elderly,null,0), decimal)
+                                                             ^
+2016-02-13 22:49:02 ERROR  : ERROR:  function oalesce(integer, unknown, integer) does not exist
+LINE 5:   cast(c(oalesce(tb.child+tb.adult+tb.elderly,null,0)/pop.po...
+                 ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 22:50:13 ERROR  : ERROR:  syntax error at or near ")"
+LINE 5: ...elderly,null,0) AS decimal)/cast(pop.population AS decimal))
+                                                                      ^
+2016-02-13 22:58:22 ERROR  : ERROR:  function round(double precision, integer) does not exist
+LINE 5:   round(cast(coalesce(tb.child+tb.adult+tb.elderly,null,0) A...
+          ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 22:59:19 ERROR  : ERROR:  function round(double precision, integer) does not exist
+LINE 5:   round(cast(coalesce(tb.child+tb.adult+tb.elderly,null,0) A...
+          ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 22:59:57 ERROR  : ERROR:  function round(double precision, integer) does not exist
+LINE 5:   round(cast(coalesce(tb.child+tb.adult+tb.elderly,null,0) A...
+          ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 23:01:19 ERROR  : ERROR:  numeric field overflow
+DETAIL:  A field with precision 10, scale 6 must round to an absolute value less than 10^4.
+2016-02-13 23:01:42 ERROR  : ERROR:  numeric field overflow
+DETAIL:  A field with precision 10, scale 4 must round to an absolute value less than 10^6.
+2016-02-13 23:02:14 ERROR  : ERROR:  numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+2016-02-13 23:04:38 ERROR  : ERROR:  numeric field overflow
+DETAIL:  A field with precision 10, scale 10 must round to an absolute value less than 1.
+2016-02-13 23:05:01 ERROR  : ERROR:  numeric field overflow
+DETAIL:  A field with precision 10, scale 6 must round to an absolute value less than 10^4.
+2016-02-13 23:19:21 ERROR  : ERROR:  relation "tb_rates" does not exist
+LINE 1: select * from tb_rates
+                      ^
+2016-02-13 23:23:47 ERROR  : ERROR:  function mean(integer) does not exist
+LINE 1: select  country, mean(cases) 
+                         ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 23:23:57 ERROR  : ERROR:  function median(integer) does not exist
+LINE 1: select  country, median(cases) 
+                         ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 23:26:39 ERROR  : ERROR:  function average(integer) does not exist
+LINE 1: select  country, average(cases)
+                         ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2016-02-13 23:33:18 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 10: CREATE TABLE tb_rates AS
+         ^
+2016-02-13 23:33:26 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 10: CREATE TABLE tb_rates AS
+         ^
+2016-02-13 23:38:30 ERROR  : ERROR:  column "rates" does not exist
+LINE 1: select  country, round(avg(rates)) avgRate
+                                   ^
+HINT:  Perhaps you meant to reference the column "tb_rates.cases".
+2016-02-13 23:38:48 ERROR  : ERROR:  column "rate" does not exist
+LINE 1: select  country, round(avg(rate)) avgRate
+                                   ^
+2016-02-13 23:41:21 ERROR  : ERROR:  syntax error at or near "desc"
+LINE 5: desc limit 25
+        ^
+2016-02-14 12:43:26 ERROR  : ERROR:  syntax error at or near "OVER"
+LINE 6:   avg(rate_per_100thsd) OVER(PARTITION BY COUNTRY, YEAR)
+                                ^
+2016-02-14 12:43:35 ERROR  : ERROR:  syntax error at or near "OVER"
+LINE 6:   avg(rate_per_100thsd) OVER (PARTITION BY COUNTRY, YEAR)
+                                ^
+2016-02-14 14:35:22 ERROR  : ERROR:  syntax error at or near "100"
+LINE 7:  WHEN regr_slope(rate_per_100thsd, year) 100 > 0 THEN 'lower...
+                                                 ^
+2016-02-14 14:36:10 ERROR  : ERROR:  syntax error at or near "%"
+LINE 10: regr_slope(rate_per_100thsd, year) * 100 regr_slope%
+                                                            ^
+2016-02-14 16:46:34 ERROR  : ERROR:  unterminated quoted identifier at or near "")"
+LINE 16: limit 25        ")
+                         ^
+2016-02-14 16:46:40 ERROR  : ERROR:  unterminated quoted identifier at or near "")"
+LINE 16: limit 25        ")
+                         ^
